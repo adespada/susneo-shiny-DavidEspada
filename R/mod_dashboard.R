@@ -150,7 +150,7 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
         dplyr::group_by(date, site) %>%
         dplyr::summarise(total_value = sum(value, na.rm = TRUE), .groups = 'drop') %>%
         ggplot2::ggplot(ggplot2::aes(x = date, y = total_value, color = site)) +
-        ggplot2::geom_line(size = 1.2) +
+        ggplot2::geom_line(linewidth = 1.2) +
         ggplot2::geom_point(size = 2) +
         ggplot2::labs(x = "Date", y = "Energy Consumption",
                       title = "Energy Consumption Trends") +

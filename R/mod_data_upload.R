@@ -34,7 +34,7 @@ mod_data_upload_ui <- function(id) {
 #' data_upload Server Functions
 #'
 #' @param id Module ID
-#' @param analyzer sustainability_analyzer R6 object
+#' @param analyzer class_sustainability_analyzer R6 object
 #'
 #' @noRd
 mod_data_upload_server <- function(id, analyzer) {

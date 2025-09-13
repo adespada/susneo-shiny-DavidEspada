@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(susneoshiny)
+library(susneo_shiny_DavidEspada)
 
-test_check("susneoshiny")
+test_check("susneo_shiny_DavidEspada")

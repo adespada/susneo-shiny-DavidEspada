@@ -3,29 +3,28 @@
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @import shinydashboard
 #' @noRd
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
-    # Your application UI logic
-    fluidPage(
-      dashboardPage(
-        dashboardHeader(title = "SUSNEO Sustainability Dashboard"),
-        dashboardSidebar(
-          sidebarMenu(
-            menuItem("Upload Data", tabName = "upload", icon = icon("upload")),
-            menuItem("Dashboard", tabName = "dashboard", icon = icon("chart-line"))
-          )
-        ),
-        dashboardBody(
-          tabItems(
-            tabItem(tabName = "upload",
-                    mod_data_upload_ui("data_upload_1")
-            ),
-            tabItem(tabName = "dashboard",
-                    mod_dashboard_ui("dashboard_1")
-            )
+    # Your application UI logic starts here
+    dashboardPage(
+      dashboardHeader(title = "SUSNEO Sustainability Dashboard"),
+      dashboardSidebar(
+        sidebarMenu(
+          menuItem("Upload Data", tabName = "upload", icon = icon("upload")),
+          menuItem("Dashboard", tabName = "dashboard", icon = icon("chart-line"))
+        )
+      ),
+      dashboardBody(
+        tabItems(
+          tabItem(tabName = "upload",
+                  mod_data_upload_ui("data_upload_1")
+          ),
+          tabItem(tabName = "dashboard",
+                  mod_dashboard_ui("dashboard_1")
           )
         )
       )

@@ -2,10 +2,12 @@
 #'
 #' @description A class generator function
 #'
-#' @noRd
+#' @import R6
+#' @import dplyr
+#' @import lubridate
+#' @export
 sustainability_analyzer <- R6::R6Class(
-  "SustainabilityAnalyzer",
-
+  classname = 'sustainability_analyzer',
   public = list(
     #' @field data Raw data storage
     data = NULL,
