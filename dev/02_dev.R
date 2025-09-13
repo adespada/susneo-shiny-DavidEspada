@@ -36,6 +36,9 @@ golem::add_css_file("custom")
 golem::add_sass_file("custom")
 golem::add_any_file("file.json")
 
+
+golem::add_r6("sustainability_analyzer")
+
 ## Add internal datasets ----
 ## If you have data in your package
 usethis::use_data_raw(name = "my_dataset", open = FALSE)
@@ -63,6 +66,7 @@ covrpage::covrpage()
 ##
 ## (You'll need GitHub there)
 usethis::use_github()
+usethis::use_git_remote("origin", url = NULL, overwrite = TRUE)
 
 # GitHub Actions
 usethis::use_github_action()

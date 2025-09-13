@@ -10,7 +10,25 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      golem::golem_welcome_page() # Remove this line to start building your UI
+      dashboardPage(
+        dashboardHeader(title = "SUSNEO Sustainability Dashboard"),
+        dashboardSidebar(
+          sidebarMenu(
+            menuItem("Upload Data", tabName = "upload", icon = icon("upload")),
+            menuItem("Dashboard", tabName = "dashboard", icon = icon("chart-line"))
+          )
+        ),
+        dashboardBody(
+          tabItems(
+            tabItem(tabName = "upload",
+                    mod_data_upload_ui("data_upload_1")
+            ),
+            tabItem(tabName = "dashboard",
+                    mod_dashboard_ui("dashboard_1")
+            )
+          )
+        )
+      )
     )
   )
 }
@@ -33,9 +51,10 @@ golem_add_external_resources <- function() {
     favicon(),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "susneoshiny"
-    )
+      app_title = "SUSNEO Sustainability Dashboard"
+    ),
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
+    tags$link(rel = "stylesheet", type = "text/css", href = "www/custom.css")
   )
 }

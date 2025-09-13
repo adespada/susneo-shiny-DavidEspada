@@ -1,0 +1,52 @@
+ /* Custom styling for SUSNEO Dashboard */
+.content-wrapper {
+    background-color: #f4f4f4;
+}
+
+.box {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-header .navbar {
+    background-color: #2c3e50 !important;
+}
+
+.main-header .logo {
+    background-color: #34495e !important;
+}
+
+.sidebar-menu > li.active > a {
+    background-color: #2c3e50 !important;
+}
+
+/* Value box styling */
+.small-box {
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.small-box .icon {
+    font-size: 60px;
+}
+
+/* Chart styling */
+.plotly {
+    border-radius: 4px;
+}
+
+/* Table styling */
+.dataTables_wrapper {
+    margin-top: 10px;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
