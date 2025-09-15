@@ -296,6 +296,11 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
+    # Declare global variables to avoid R CMD check warnings
+    category <- avg_monthly_emissions.x <- avg_monthly_emissions.y <- NULL
+    carbon_emission_kgco2e <- avg_monthly_emissions <- total_cost <- NULL
+    type <- site <- value <- total_consumption <- avg_consumption <- NULL
+
     # Update date range AND site choices when data changes
     observe({
       req(data_reactive())
