@@ -1,0 +1,41 @@
+* using log directory 'C:/Users/Windows 10 Pro/OneDrive - CGIAR/Desktop/FL/2025/5. Shiny/susneo-shiny-DavidEspada/susneo-shiny-DavidEspada/..Rcheck'
+* using R version 4.5.1 (2025-06-13 ucrt)
+* using platform: x86_64-w64-mingw32
+* R was compiled by
+    gcc.exe (GCC) 14.2.0
+    GNU Fortran (GCC) 14.2.0
+* running under: Windows 10 x64 (build 19045)
+* using session charset: UTF-8
+* using option '--no-manual'
+* checking for file './DESCRIPTION' ... OK
+* this is package 'susneoshiny' version '0.0.0.9000'
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .Rhistory
+  .gitignore
+  .here
+  dev/.Rhistory
+  ..Rcheck
+  .Rproj.user
+  .git
+  .github
+These were most likely included in error. See section 'Package
+structure' in the 'Writing R Extensions' manual.
+* checking for portable file names ... WARNING
+Found the following files with non-portable file names:
+  data/SAMPLE ASSIGNMENT DATA.csv
+  inst/data/SAMPLE ASSIGNMENT DATA.csv
+  inst/extdata/SAMPLE ASSIGNMENT DATA.csv
+These are not fully portable file names.
+See section 'Package structure' in the 'Writing R Extensions' manual.
+* checking whether package 'susneoshiny' can be installed ... ERROR
+Installation failed.
+See 'C:/Users/Windows 10 Pro/OneDrive - CGIAR/Desktop/FL/2025/5. Shiny/susneo-shiny-DavidEspada/susneo-shiny-DavidEspada/..Rcheck/00install.out' for details.
+* DONE
+Status: 1 ERROR, 1 WARNING, 1 NOTE

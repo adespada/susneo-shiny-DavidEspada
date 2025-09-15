@@ -1,0 +1,17 @@
+* installing *source* package 'susneoshiny' ...
+** this is package 'susneoshiny' version '0.0.0.9000'
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+No man pages found in package  'susneoshiny' 
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+Warning in file.rename(instdir, final_instdir) :
+  cannot rename file 'C:/Users/WINDOW~1/ONEDRI~1/Desktop/FL/2025/5E9E2~1.SHI/SUSNEO~1/SUSNEO~1/RCHECK~1/00LOCK-SUSNEO~1/00new/susneoshiny' to 'C:/Users/WINDOW~1/ONEDRI~1/Desktop/FL/2025/5E9E2~1.SHI/SUSNEO~1/SUSNEO~1/RCHECK~1/susneoshiny', reason 'Access is denied'
+ERROR:    moving to final location failed
+* removing 'C:/Users/WINDOW~1/ONEDRI~1/Desktop/FL/2025/5E9E2~1.SHI/SUSNEO~1/SUSNEO~1/RCHECK~1/susneoshiny'

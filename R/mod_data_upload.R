@@ -209,7 +209,7 @@ mod_data_upload_server <- function(id, analyzer) {
         # Cargar datos de muestra
         tryCatch({
           # Leer el archivo
-          file_path <- file.path("data", "SAMPLE ASSIGNMENT DATA.csv")
+          file_path <- file.path("data", "SAMPLE_ASSIGNMENT_DATA.csv")
           sample_data <- readr::read_csv(file_path, show_col_types = FALSE)
 
           # Renombrar columna problemática
