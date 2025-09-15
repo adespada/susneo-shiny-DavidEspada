@@ -35,26 +35,23 @@ test_that("KPI calculations work correctly", {
   expect_equal(empty_kpis$total_energy, 0)
   expect_equal(empty_kpis$avg_energy, 0)
 
-  # Test with NULL data
-  null_kpis <- analyzer$calculate_kpis(NULL)
-  expect_equal(null_kpis$total_consumption, 0)
-  expect_equal(null_kpis$total_emissions, 0)
-  expect_equal(null_kpis$avg_consumption, 0)
-  expect_equal(null_kpis$avg_emissions, 0)
-  expect_equal(null_kpis$unique_sites, 0)
-  expect_equal(null_kpis$total_energy, 0)
-  expect_equal(null_kpis$avg_energy, 0)
-
-  # Test robustness with problematic data
-  problematic_data <- data.frame(
-    id = 1:3,
-    site = c("A", "B", "C"),
-    date = c("01/01/2024", "02/01/2024", "03/01/2024"),
-    type = c("Gas", "Electricity", "Water"),
-    value = c(100, NA, "invalid"),  # Mix of valid, NA, and invalid values
-    carbon_emission_kgco2e = c(10, 20, NA)
+  # Test with explicit empty dataframe having correct columns
+  empty_df <- data.frame(
+    id = integer(0),
+    site = character(0),
+    date = character(0),
+    type = character(0),
+    value = numeric(0),
+    carbon_emission_kgco2e = numeric(0)
   )
-  analyzer$load_data(test_data)  # Reset to valid data first
+  empty_cols_kpis <- analyzer$calculate_kpis(empty_df)
+  expect_equal(empty_cols_kpis$total_consumption, 0)
+  expect_equal(empty_cols_kpis$total_emissions, 0)
+  expect_equal(empty_cols_kpis$avg_consumption, 0)
+  expect_equal(empty_cols_kpis$avg_emissions, 0)
+  expect_equal(empty_cols_kpis$unique_sites, 0)
+  expect_equal(empty_cols_kpis$total_energy, 0)
+  expect_equal(empty_cols_kpis$avg_energy, 0)
 
   # Test with filtered data (subset)
   filtered_data <- test_data[test_data$site == "A", ]

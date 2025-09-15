@@ -61,9 +61,24 @@ sustainability_analyzer <- R6::R6Class(
     #' @description Calculate KPIs including company-wide metrics
     #' @param filtered_data Filtered dataset
     calculate_kpis = function(filtered_data = NULL) {
-      if (is.null(filtered_data)) {
+      # Si filtered_data es explícitamente NULL, retornar zeros
+      if (is.null(filtered_data) && missing(filtered_data) == FALSE) {
+        return(list(
+          total_consumption = 0,
+          total_emissions = 0,
+          avg_consumption = 0,
+          avg_emissions = 0,
+          unique_sites = 0,
+          total_energy = 0,
+          avg_energy = 0
+        ))
+      }
+
+      # Si no se pasó parámetro, usar self$data
+      if (missing(filtered_data) || is.null(filtered_data)) {
         filtered_data <- self$data
       }
+
       if (is.null(filtered_data) || nrow(filtered_data) == 0) {
         return(list(
           total_consumption = 0,

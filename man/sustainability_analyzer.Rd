@@ -99,7 +99,7 @@ Filter data by date range and sites
 \if{html}{\out{<a id="method-sustainability_analyzer-calculate_kpis"></a>}}
 \if{latex}{\out{\hypertarget{method-sustainability_analyzer-calculate_kpis}{}}}
 \subsection{Method \code{calculate_kpis()}}{
-Calculate KPIs
+Calculate KPIs including company-wide metrics
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{sustainability_analyzer$calculate_kpis(filtered_data = NULL)}\if{html}{\out{</div>}}
 }
