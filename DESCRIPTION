@@ -1,4 +1,4 @@
-Package: susneo_shiny_DavidEspada
+Package: susneoshiny
 Title: PKG_TITLE
 Version: 0.0.0.9000
 Authors@R: 
@@ -19,7 +19,8 @@ Imports:
     lubridate (>= 1.8.0),
     readr (>= 2.1.2),
     scales (>= 1.2.1),
-    htmlwidgets
+    htmlwidgets,
+    testthat
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2

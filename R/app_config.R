@@ -9,7 +9,7 @@
 #'
 #' @noRd
 app_sys <- function(...) {
-  system.file(..., package = "susneo_shiny_DavidEspada")
+  system.file(..., package = "susneoshiny")
 }
 
 
