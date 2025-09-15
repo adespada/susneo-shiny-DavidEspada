@@ -1,4 +1,4 @@
-# SusNeo Shiny - Sustainability Analytics Dashboard
+# Susneo Shiny - Sustainability Analytics Dashboard
 
 A modern, dark-themed Shiny application for sustainability data analysis and carbon emissions tracking. Built with R6 classes and modular architecture using the `{golem}` framework.
 
