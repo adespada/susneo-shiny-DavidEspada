@@ -1,52 +1,918 @@
- /* Custom styling for SUSNEO Dashboard */
-.content-wrapper {
-    background-color: #f4f4f4;
+/* SUSNEO Dashboard - Modern Dark Theme */
+/* Complete CSS styling for sustainability dashboard */
+
+/* ==============================================
+   BASE THEME STYLING
+   ============================================== */
+body {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.box {
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.content-wrapper, .right-side {
+  background-color: #1a1a1a !important;
 }
 
-.main-header .navbar {
-    background-color: #2c3e50 !important;
+.main-sidebar {
+  background-color: #0f2027 !important;
 }
 
-.main-header .logo {
-    background-color: #34495e !important;
+.sidebar-menu > li > a {
+  color: #ffffff !important;
+  border-left: 3px solid transparent;
 }
 
 .sidebar-menu > li.active > a {
-    background-color: #2c3e50 !important;
+  background-color: #4ecdc4 !important;
+  border-left: 3px solid #4ecdc4 !important;
 }
 
-/* Value box styling */
-.small-box {
-    border-radius: 8px;
-    margin-bottom: 20px;
+/* ==============================================
+   DASHBOARD SECTIONS
+   ============================================== */
+.dashboard-section {
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+  border: 1px solid #333;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-.small-box .icon {
-    font-size: 60px;
+.section-title {
+  color: #ffffff;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
 }
 
-/* Chart styling */
-.plotly {
-    border-radius: 4px;
+.section-icon {
+  margin-right: 10px;
+  color: #4ecdc4;
 }
 
-/* Table styling */
+/* ==============================================
+   KPI CARDS STYLING
+   ============================================== */
+.kpi-card {
+  background: linear-gradient(145deg, #3a3a3a, #2e2e2e);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #444;
+  margin: 8px;
+  transition: transform 0.3s ease;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(78, 205, 196, 0.15);
+}
+
+.kpi-icon-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.kpi-icon {
+  font-size: 1.8em;
+  opacity: 0.8;
+}
+
+.kpi-value {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 8px 0;
+  line-height: 1.2;
+}
+
+.kpi-label {
+  font-size: 0.75em;
+  color: #aaaaaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+}
+
+/* Category-specific colors */
+.kpi-water { color: #4fc3f7; }
+.kpi-electricity { color: #ffd54f; }
+.kpi-waste { color: #81c784; }
+.kpi-gas { color: #ef5350; }
+.kpi-fuel { color: #ff9800; }
+
+/* ==============================================
+   CHART CONTAINERS
+   ============================================== */
+.chart-container {
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 15px;
+  border: 1px solid #333;
+  height: 400px;
+}
+
+/* ==============================================
+   NAVIGATION TABS
+   ============================================== */
+.nav-tabs {
+  border-bottom: 2px solid #4ecdc4;
+}
+
+.nav-tabs > li > a {
+  color: #aaa !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.nav-tabs > li.active > a {
+  color: #4ecdc4 !important;
+  background-color: #2a2a2a !important;
+  border-bottom: 2px solid #4ecdc4 !important;
+}
+
+/* ==============================================
+   UPLOAD MODULE STYLING
+   ============================================== */
+.upload-container {
+  width: 100%;
+}
+
+.upload-card {
+  background: linear-gradient(145deg, #3a3a3a, #2e2e2e);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #444;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(78, 205, 196, 0.15);
+}
+
+.upload-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.upload-icon {
+  font-size: 1.5em;
+  color: #4ecdc4;
+  margin-right: 10px;
+}
+
+.upload-title {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.upload-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.upload-description {
+  color: #aaaaaa;
+  font-size: 0.9em;
+  margin: 10px 0 0 0;
+  line-height: 1.4;
+}
+
+/* ==============================================
+   FILE INPUT STYLING
+   ============================================== */
+.file-input-wrapper {
+  width: 100%;
+}
+
+.file-input-wrapper .form-group {
+  margin-bottom: 0;
+}
+
+.file-input-wrapper .shiny-input-container {
+  position: relative;
+}
+
+.file-input-wrapper .input-group {
+  display: table !important;
+  width: 100% !important;
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border-collapse: separate !important;
+}
+
+.file-input-wrapper .input-group:hover {
+  border-color: #4ecdc4;
+  box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.1);
+}
+
+.file-input-wrapper .input-group .input-group-btn {
+  display: table-cell !important;
+  width: 1% !important;
+  vertical-align: middle !important;
+}
+
+.file-input-wrapper .input-group .input-group-btn .btn {
+  background-color: #4ecdc4 !important;
+  border: none !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+  padding: 12px 20px !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  height: 44px !important;
+  white-space: nowrap !important;
+  width: 120px !important;
+}
+
+.file-input-wrapper .input-group .input-group-btn .btn:hover {
+  background-color: #45b7aa !important;
+}
+
+.file-input-wrapper .input-group .form-control {
+  display: table-cell !important;
+  width: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #aaaaaa !important;
+  padding: 12px 15px !important;
+  border-radius: 0 !important;
+  font-style: italic !important;
+  height: 44px !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+}
+
+.file-input-wrapper .input-group .form-control:focus {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.file-input-wrapper .input-group .form-control:not(:placeholder-shown) {
+  color: #ffffff !important;
+  font-style: normal !important;
+}
+
+/* ==============================================
+   CHECKBOX STYLING
+   ============================================== */
+.checkbox-container {
+  margin: 10px 0;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4ecdc4;
+  margin-right: 8px;
+}
+
+.checkbox label {
+  color: #ffffff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ==============================================
+   UPLOAD ACTIONS & BUTTONS
+   ============================================== */
+.upload-actions {
+  margin-top: 25px;
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.btn-load-data {
+  background: linear-gradient(145deg, #4ecdc4, #45b7aa) !important;
+  border: none !important;
+  color: #000000 !important;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 12px 30px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+}
+
+.btn-load-data:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+  background: linear-gradient(145deg, #45b7aa, #3ea89d) !important;
+}
+
+.btn-load-data:active {
+  transform: translateY(0);
+}
+
+/* ==============================================
+   STATUS & PREVIEW CONTAINERS
+   ============================================== */
+.upload-status-container {
+  margin-top: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#upload_status, pre {
+  background-color: #2a2a2a !important;
+  border: 1px solid #4ecdc4 !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  min-height: 50px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.preview-container {
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #333;
+}
+
+/* ==============================================
+   DATATABLE DARK THEME
+   ============================================== */
 .dataTables_wrapper {
-    margin-top: 10px;
+  color: #ffffff !important;
 }
 
-/* Button styling */
-.btn-primary {
-    background-color: #3498db;
-    border-color: #3498db;
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+  color: #ffffff !important;
 }
 
-.btn-primary:hover {
-    background-color: #2980b9;
-    border-color: #2980b9;
+.dataTables_wrapper .dataTables_filter input {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+table.dataTable {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-collapse: collapse;
+}
+
+table.dataTable thead th {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #4ecdc4 !important;
+  padding: 12px 8px;
+  font-weight: 600;
+}
+
+table.dataTable tbody tr {
+  background-color: #1a1a1a !important;
+}
+
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #252525 !important;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #333333 !important;
+}
+
+table.dataTable tbody td {
+  padding: 10px 8px;
+  border-top: 1px solid #333 !important;
+  color: #ffffff !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background: #333 !important;
+  border: 1px solid #555 !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  margin: 0 2px;
+  padding: 6px 12px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: #4ecdc4 !important;
+  border: 1px solid #4ecdc4 !important;
+  color: #000000 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: #4ecdc4 !important;
+  border: 1px solid #4ecdc4 !important;
+  color: #000000 !important;
+}
+
+/* ==============================================
+   LEGACY BOX STYLING (for compatibility)
+   ============================================== */
+.box {
+  background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+  border-radius: 15px;
+  border: 1px solid #333;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  color: #ffffff;
+}
+
+.box-header {
+  background: transparent;
+  border-bottom: 1px solid #333;
+  color: #ffffff;
+}
+
+.box-header .box-title {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.box-body {
+  background: transparent;
+  color: #ffffff;
+}
+
+/* ==============================================
+   HEADER STYLING
+   ============================================== */
+.main-header .navbar {
+  background-color: #0f2027 !important;
+  border-bottom: 1px solid #4ecdc4;
+}
+
+.main-header .logo {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+   ============================================== */
+
+/* Large screens adjustments */
+@media (max-width: 1200px) {
+  .kpi-card {
+    padding: 12px;
+    min-height: 100px;
+  }
+
+  .kpi-value {
+    font-size: 1.4em;
+  }
+
+  .kpi-icon {
+    font-size: 1.5em;
+  }
+
+  .kpi-label {
+    font-size: 0.7em;
+  }
+}
+
+/* Mobile and tablet adjustments */
+@media (max-width: 768px) {
+  .kpi-card {
+    padding: 10px;
+    min-height: 80px;
+    margin: 5px;
+  }
+
+  .kpi-value {
+    font-size: 1.2em;
+  }
+
+  .kpi-icon {
+    font-size: 1.3em;
+  }
+
+  .kpi-label {
+    font-size: 0.65em;
+  }
+
+  .chart-container {
+    height: 300px;
+    padding: 15px;
+  }
+
+  .upload-card {
+    height: auto;
+    min-height: 150px;
+    margin-bottom: 15px;
+  }
+
+  .upload-actions {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+
+  .btn-load-data {
+    font-size: 1em;
+    padding: 10px 25px;
+  }
+
+  .section-title {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-section {
+    padding: 20px;
+    margin: 15px 0;
+  }
+}
+
+
+
+/* ==============================================
+   DATE RANGE INPUT CALENDAR FIX
+   ============================================== */
+
+/* dropdown */
+.bootstrap-datetimepicker-widget,
+.datepicker-dropdown,
+.datepicker {
+  background-color: #2a2a2a !important;
+  border: 1px solid #555 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+  color: #ffffff !important;
+}
+
+/* table */
+.datepicker table tr td,
+.datepicker table tr th,
+.bootstrap-datetimepicker-widget table tr td,
+.bootstrap-datetimepicker-widget table tr th {
+  color: #ffffff !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* days */
+.datepicker table tr td.day,
+.datepicker table tr td.old,
+.datepicker table tr td.new,
+.bootstrap-datetimepicker-widget table tr td.day,
+.bootstrap-datetimepicker-widget table tr td.old,
+.bootstrap-datetimepicker-widget table tr td.new {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  font-weight: normal !important;
+}
+
+/* days */
+.datepicker table tr td.day:hover,
+.datepicker table tr td.old:hover,
+.datepicker table tr td.new:hover,
+.bootstrap-datetimepicker-widget table tr td.day:hover,
+.bootstrap-datetimepicker-widget table tr td.old:hover,
+.bootstrap-datetimepicker-widget table tr td.new:hover {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  border-color: #4ecdc4 !important;
+}
+
+/* active */
+.datepicker table tr td.active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active.highlighted,
+.bootstrap-datetimepicker-widget table tr td.active,
+.bootstrap-datetimepicker-widget table tr td.active:hover,
+.bootstrap-datetimepicker-widget table tr td.active.highlighted {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  border-color: #4ecdc4 !important;
+  font-weight: bold !important;
+}
+
+/* current */
+.datepicker table tr td.today,
+.bootstrap-datetimepicker-widget table tr td.today {
+  background-color: #45b7aa !important;
+  color: #ffffff !important;
+  border-color: #45b7aa !important;
+}
+
+.datepicker table tr td.today:hover,
+.bootstrap-datetimepicker-widget table tr td.today:hover {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+}
+
+/* days */
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover,
+.bootstrap-datetimepicker-widget table tr td.disabled,
+.bootstrap-datetimepicker-widget table tr td.disabled:hover {
+  color: #666666 !important;
+  background-color: transparent !important;
+  cursor: not-allowed !important;
+}
+
+/* Headers */
+.datepicker .datepicker-switch,
+.datepicker .prev,
+.datepicker .next,
+.bootstrap-datetimepicker-widget .datepicker-switch,
+.bootstrap-datetimepicker-widget .prev,
+.bootstrap-datetimepicker-widget .next {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+  color: #ffffff !important;
+  border-radius: 4px !important;
+}
+
+.datepicker .datepicker-switch:hover,
+.datepicker .prev:hover,
+.datepicker .next:hover,
+.bootstrap-datetimepicker-widget .datepicker-switch:hover,
+.bootstrap-datetimepicker-widget .prev:hover,
+.bootstrap-datetimepicker-widget .next:hover {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  border-color: #4ecdc4 !important;
+}
+
+/* week headers */
+.datepicker table tr th.dow,
+.bootstrap-datetimepicker-widget table tr th.dow {
+  color: #4ecdc4 !important;
+  font-weight: bold !important;
+  background-color: transparent !important;
+  border: none !important;
+  text-align: center !important;
+}
+
+/* Range selection */
+.datepicker table tr td.range,
+.bootstrap-datetimepicker-widget table tr td.range {
+  background-color: rgba(78, 205, 196, 0.2) !important;
+  color: #ffffff !important;
+  border-radius: 0 !important;
+}
+
+.datepicker table tr td.range-start,
+.datepicker table tr td.range-end,
+.bootstrap-datetimepicker-widget table tr td.range-start,
+.bootstrap-datetimepicker-widget table tr td.range-end {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  border-radius: 4px !important;
+}
+
+/* Selector */
+.datepicker table tr td.month,
+.datepicker table tr td.year,
+.bootstrap-datetimepicker-widget table tr td.month,
+.bootstrap-datetimepicker-widget table tr td.year {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+}
+
+.datepicker table tr td.month:hover,
+.datepicker table tr td.year:hover,
+.bootstrap-datetimepicker-widget table tr td.month:hover,
+.bootstrap-datetimepicker-widget table tr td.year:hover {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  border-color: #4ecdc4 !important;
+}
+
+/* Input field styling */
+.form-control[readonly] {
+  background-color: #333 !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  border: 1px solid #555 !important;
+}
+
+/* numbers */
+.datepicker td span,
+.datepicker th span,
+.bootstrap-datetimepicker-widget td span,
+.bootstrap-datetimepicker-widget th span {
+  color: #ffffff !important;
+}
+
+/* force colors */
+.datepicker *,
+.bootstrap-datetimepicker-widget * {
+  color: inherit !important;
+}
+
+.datepicker,
+.bootstrap-datetimepicker-widget {
+  color: #ffffff !important;
+}
+
+
+
+
+
+
+/*   KPI Company */
+
+/*  Total Energy Usage */
+.kpi-energy {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #000000;
+}
+
+/*  Total Emissions */
+.kpi-emissions {
+  background: linear-gradient(135deg, #FF6B6B, #FF4757);
+  color: #ffffff;
+}
+
+/*  Average Energy Usage */
+.kpi-avg-energy {
+  background: linear-gradient(135deg, #3742FA, #5352ED);
+  color: #ffffff;
+}
+
+/*  Average Emissions */
+.kpi-avg-emissions {
+  background: linear-gradient(135deg, #2ED573, #20BF6B);
+  color: #000000;
+}
+
+/* space */
+.dashboard-section .kpi-card {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-section .kpi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.2);
+  border-color: #4ecdc4;
+}
+
+
+
+/* ========================================= */
+/* CUSTOM STYLES FOR SUSTAINABILITY DASHBOARD */
+/* ========================================= */
+
+/* ===== SELECTIZE MULTI-SELECT STYLING ===== */
+
+/* Main selectize container */
+.selectize-control {
+  margin-bottom: 10px;
+}
+
+/* Input field styling */
+.selectize-control .selectize-input {
+  background-color: #2a2a2a !important;
+  border: 1px solid #555 !important;
+  color: #ffffff !important;
+  border-radius: 5px !important;
+  min-height: 38px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+}
+
+.selectize-control .selectize-input:focus,
+.selectize-control .selectize-input.focus {
+  border-color: #4ecdc4 !important;
+  box-shadow: 0 0 8px rgba(78, 205, 196, 0.4) !important;
+  outline: none !important;
+}
+
+/* Dropdown menu styling */
+.selectize-dropdown {
+  background-color: #2a2a2a !important;
+  border: 1px solid #555 !important;
+  color: #ffffff !important;
+  border-radius: 5px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  z-index: 9999 !important;
+}
+
+/* Dropdown options */
+.selectize-dropdown .option {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  padding: 10px 12px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.selectize-dropdown .option:last-child {
+  border-bottom: none !important;
+}
+
+.selectize-dropdown .option:hover,
+.selectize-dropdown .option.active {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  cursor: pointer !important;
+}
+
+.selectize-dropdown .option.selected {
+  background-color: rgba(78, 205, 196, 0.2) !important;
+  color: #4ecdc4 !important;
+}
+
+/* Selected items (tags) styling */
+.selectize-input .item {
+  background-color: #4ecdc4 !important;
+  color: #000000 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  margin: 2px 4px 2px 0 !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.selectize-input .item:hover {
+  background-color: #3db3aa !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Remove button in tags */
+.selectize-input .item .remove {
+  color: #000000 !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.2) !important;
+  padding-left: 6px !important;
+  margin-left: 6px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.selectize-input .item .remove:hover {
+  background-color: rgba(255, 0, 0, 0.2) !important;
+  color: #ff0000 !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* Placeholder styling */
+.selectize-input.has-items .item input,
+.selectize-input input {
+  color: #ffffff !important;
+}
+
+.selectize-input input::placeholder {
+  color: #aaaaaa !important;
 }

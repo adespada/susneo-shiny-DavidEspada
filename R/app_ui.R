@@ -45,7 +45,6 @@ golem_add_external_resources <- function() {
     "www",
     app_sys("app/www")
   )
-
   tags$head(
     favicon(),
     bundle_resources(
@@ -54,6 +53,19 @@ golem_add_external_resources <- function() {
     ),
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
-    tags$link(rel = "stylesheet", type = "text/css", href = "www/custom.css")
+    tags$link(rel = "stylesheet", type = "text/css", href = "www/custom.css"),
+
+    # JavaScript for file input reset functionality
+    tags$script(HTML("
+      Shiny.addCustomMessageHandler('resetFileInput', function(inputId) {
+        var input = document.getElementById(inputId);
+        if (input) {
+          input.value = '';
+          // Trigger change event to notify Shiny
+          var event = new Event('change', { bubbles: true });
+          input.dispatchEvent(event);
+        }
+      });
+    "))
   )
 }

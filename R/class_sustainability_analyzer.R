@@ -23,7 +23,7 @@ sustainability_analyzer <- R6::R6Class(
       if (self$validate_data(df)) {
         self$data <- df %>%
           mutate(
-            date = as.Date(date, format = "%d/%m/%Y"),
+            date = lubridate::dmy(date),
             value = as.numeric(value),
             carbon_emission_kgco2e = as.numeric(carbon_emission_kgco2e)
           )
@@ -36,15 +36,12 @@ sustainability_analyzer <- R6::R6Class(
     #' @param df Data frame to validate
     validate_data = function(df) {
       required_cols <- c("id", "site", "date", "type", "value", "carbon_emission_kgco2e")
-
-      if (!all(required_cols %in% colnames(df))) {
+      if (!all(required_cols %in% colnames(df))) {  # <-- Asegúrate que aquí dice 'df', no 'sample_data'
         return(FALSE)
       }
-
-      if (nrow(df) == 0) {
+      if (nrow(df) == 0) {  # <-- Y aquí también 'df', no 'sample_data'
         return(FALSE)
       }
-
       return(TRUE)
     },
 
