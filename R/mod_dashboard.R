@@ -343,24 +343,11 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
       )
     })
 
-    # Calculate company-wide KPIs
+    #  KPIs
     company_kpis <- reactive({
       req(filtered_data())
-
-      data <- filtered_data()
-
-      # Calculate total and average values for the entire company
-      total_energy <- sum(data$value, na.rm = TRUE)
-      total_emissions <- sum(data$carbon_emission_kgco2e, na.rm = TRUE)
-      avg_energy <- mean(data$value, na.rm = TRUE)
-      avg_emissions <- mean(data$carbon_emission_kgco2e, na.rm = TRUE)
-
-      list(
-        total_energy = total_energy,
-        total_emissions = total_emissions,
-        avg_energy = avg_energy,
-        avg_emissions = avg_emissions
-      )
+      # calculate_kpis analyzer
+      analyzer$calculate_kpis(filtered_data())
     })
 
     # Company KPI Output Functions
@@ -443,7 +430,7 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
       if(length(water_val) > 0) {
         scales::comma(round(water_val, 0))
       } else {
-        "150"
+        "N/A"
       }
     })
 
@@ -453,7 +440,7 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
       if(length(elec_val) > 0) {
         scales::comma(round(elec_val, 0))
       } else {
-        "2,500"
+        "N/A"
       }
     })
 
@@ -463,7 +450,7 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
       if(length(waste_val) > 0) {
         scales::comma(round(waste_val, 0))
       } else {
-        "75"
+        "N/A"
       }
     })
 
@@ -473,7 +460,7 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
       if(length(gas_val) > 0) {
         scales::comma(round(gas_val, 0))
       } else {
-        "1,800"
+        "N/A"
       }
     })
 
@@ -483,7 +470,7 @@ mod_dashboard_server <- function(id, data_reactive, analyzer) {
       if(length(fuel_val) > 0) {
         scales::comma(round(fuel_val, 0))
       } else {
-        "650"
+        "N/A"
       }
     })
 
